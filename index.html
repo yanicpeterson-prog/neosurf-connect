@@ -156,17 +156,6 @@
 
     </footer>
     
-    document.getElementById("verificationForm").addEventListener("submit", function (e) {
-
-    const recaptcha = grecaptcha.getResponse();
-
-    if (recaptcha.length === 0) {
-        e.preventDefault();
-        alert("Veuillez valider le reCAPTCHA avant de continuer.");
-        return;
-    }
-
-});
 </body>
 
 </html>

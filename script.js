@@ -62,10 +62,11 @@ if (!verificationForm) {
 
         }
 
-    if (grecaptcha.getResponse().length === 0) {
-        alert("Veuillez cocher le reCAPTCHA.");
-        return;
-    }
+   if (typeof grecaptcha === "undefined" || grecaptcha.getResponse().length === 0) {
+    result.innerHTML = "❌ Veuillez valider le reCAPTCHA avant de continuer.";
+    result.className = "error";
+    return;
+}
         // Envoi EmailJS
 
         emailjs.send(

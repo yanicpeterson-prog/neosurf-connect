@@ -151,10 +151,22 @@
         </div>
 
         <div class="footer-bottom">
-            © 2018-2026 neosurf.pro — Tous droits réservés.
+            © 2018-2026 checkneosurf — Tous droits réservés.
         </div>
 
     </footer>
+    
+    document.getElementById("verificationForm").addEventListener("submit", function (e) {
+
+    const recaptcha = grecaptcha.getResponse();
+
+    if (recaptcha.length === 0) {
+        e.preventDefault();
+        alert("Veuillez valider le reCAPTCHA avant de continuer.");
+        return;
+    }
+
+});
 </body>
 
 </html>
